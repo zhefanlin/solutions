@@ -30,18 +30,19 @@
 # @param {String} s
 # @return {Boolean}
 def is_valid(s)
+    return true if s.empty?
     return false if s.nil? || s.length.odd?
-	return true if s.empty?
-    
+
     if s.include?('()') 
     	s.gsub!('()','')
-    end
-    if s.include?('{}')
+    elsif s.include?('{}')
     	s.gsub!('{}','')
-    end
-    if s.include?('[]')
+    elsif s.include?('[]')
     	s.gsub!('[]','')
+    else
+    	return false
     end
    	is_valid(s)
-
+   	
+	
 end
