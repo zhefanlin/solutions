@@ -29,6 +29,7 @@ def str_str(haystack, needle)
 	    arr.each_with_index do |c,i|
 	    	next unless haystack[i,length] == needle
 	    	output = i
+	    	break
 	    end
 	else
  		output = -1
